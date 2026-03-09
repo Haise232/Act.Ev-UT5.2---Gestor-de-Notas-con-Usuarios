@@ -1,8 +1,7 @@
-package modelo ; 
- 
+package modelo;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatter; // Importa a classe DateTimeFormatter para formatar a data e hora
 
 public class Nota {
 
@@ -10,13 +9,15 @@ public class Nota {
     private String contenido;
     private LocalDateTime fechaCreacion;
 
+    // Constructor que pone la fecha automatica
     public Nota(String titulo, String contenido) {
-        this.titulo = titulo; 
+        this.titulo = titulo;
         this.contenido = contenido;
-        this.fechaCreacion = LocalDateTime.now(); // Define a data e hora de criação
+        this.fechaCreacion = LocalDateTime.now();
     }
 
-        public Nota(String titulo, String contenido, LocalDateTime fechaCreacion) {
+    // Constructor con fecha manual (para cuando cargamos del fichero)
+    public Nota(String titulo, String contenido, LocalDateTime fechaCreacion) {
         this.titulo = titulo;
         this.contenido = contenido;
         this.fechaCreacion = fechaCreacion;
@@ -26,7 +27,7 @@ public class Nota {
         return titulo;
     }
 
-        public void setTitulo(String titulo) {
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
@@ -42,6 +43,7 @@ public class Nota {
         return fechaCreacion;
     }
 
+    // Devuelve la fecha formateada 
     public String getFechaFormateada() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         return fechaCreacion.format(formatter);

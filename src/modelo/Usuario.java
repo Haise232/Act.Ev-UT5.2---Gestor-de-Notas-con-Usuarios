@@ -1,6 +1,8 @@
 package modelo;
 
+// Clase que representa un usuario del sistema
 public class Usuario {
+
     private String nombre;
     private String passwordHash;
 
