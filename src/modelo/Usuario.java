@@ -3,8 +3,8 @@ package modelo;
 // Clase que representa un usuario del sistema
 public class Usuario {
 
-    private String nombre;
-    private String passwordHash;
+    private final String nombre;
+    private final String passwordHash;
 
     public Usuario(String nombre, String passwordHash) {
         this.nombre = nombre;
